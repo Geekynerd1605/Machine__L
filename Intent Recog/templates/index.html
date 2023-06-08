@@ -1,0 +1,46 @@
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Intent Recognition API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Intent Recognition</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="text" placeholder="Sentence" required="required" />
+      
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+	
+	{{text}}	<br>
+   {{intent}}
+   
+   
+   <h3>Note:</h3>
+   Examples: 
+   <br>
+   <br>
+   	1. Play songs on loud volume.		Intent: PlayMusic <br> <br>
+   	2. Rate the current novel four out of 6 stars.		Intent: RateBook  <br> <br>
+	3. Add step to me to the 50 classics playlist.		Intent: AddToPlaylist <br> <br>
+	4. Can you get me reservations for a highly rated restaurant in seychelles.		Intent: BookRestaurant <br> <br>
+   	5. Please search the young warriors game.		Intent: SearchCreativeWork <br> <br>
+   	6. Find on dress parade.		Intent: SearchScreeningEvent <br> <br>
+   	7. Will the wind die down at my current location by supper time.		Intent: GetWeather <br>	<br>
+ </div>
+
+
+</body>
+</html>
